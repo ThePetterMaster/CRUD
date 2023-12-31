@@ -1,0 +1,14 @@
+filebeat.inputs:
+  - type: log
+    paths:
+      # - /opt/sigma_desenvolvimento/logs/*.log
+      - /opt/app/log/*.log
+
+#    multiline.type: pattern
+#    multiline.pattern: '^[[:space:]]+(at|\.{3})[[:space:]]+\b|^Caused by:'
+#    multiline.negate: false
+#    multiline.match: after
+
+output.logstash:
+  hosts: ["172.26.0.4:5044"]
+  index: "index-name-service"
